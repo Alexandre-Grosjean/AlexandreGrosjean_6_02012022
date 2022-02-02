@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 
+require('dotenv').config();
+
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 
@@ -9,7 +11,7 @@ const app = express();
 
 // connexion mongodb
 
-mongoose.connect('mongodb+srv://new_user:Project6Piiquante@cluster0.b2khq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect(process.env.mongoAtlas ,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
