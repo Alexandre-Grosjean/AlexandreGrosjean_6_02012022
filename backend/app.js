@@ -7,6 +7,8 @@ const userRoutes = require('./routes/user');
 
 const app = express();
 
+// connexion mongodb
+
 mongoose.connect('mongodb+srv://new_user:Project6Piiquante@cluster0.b2khq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
@@ -17,12 +19,16 @@ mongoose.connect('mongodb+srv://new_user:Project6Piiquante@cluster0.b2khq.mongod
 
 app.use(express.json());
 
+// liaison server
+
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
 });
+
+
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
