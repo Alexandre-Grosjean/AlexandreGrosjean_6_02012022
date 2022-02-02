@@ -10,7 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^15.0.1",
     "express": "^4.17.2",
+    "i": "^0.3.7",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.8",
     "mongoose-unique-validator": "^3.0.0",
