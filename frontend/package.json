@@ -12,9 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "@angular/cli": "^13.2.2",
-    "concurrently": "^5.2.0",
-    "http-server": "^0.11.1",
-    "live-server": "^1.2.1",
+    "concurrently": "^7.0.0",
+    "http-server": "^14.1.0",
+    "live-server": "^1.1.0",
+    "node": "^16.13.2",
     "node-sass": "^7.0.1"
   },
   "devDependencies": {
