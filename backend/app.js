@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const path = require('path');
 
 const helmet = require('helmet');
@@ -22,7 +22,10 @@ mongoose.connect( process.env.mongoAtlas,
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 const app = express();
-app.use(helmet());
+app.use(express.json());
+app.use(helmet(
+  {crossOriginResourcePolicy: false,}
+  ));
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -39,7 +42,7 @@ app.use((req, res, next) => {
 });
 
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
