@@ -20,7 +20,8 @@ schema
 exports.signup = (req, res, next) => {
     if (!schema.validate(req.body.password)) {
         console.log("mot de passe trop faible");
-        throw { error : "mot de passe trop faible" };
+        // throw { error : "mot de passe trop faible" };
+        res.status(500).json({ message : "mot de passe trop faible" })
     } else {
         bcrypt.hash(req.body.password, 10)
             .then(hash => {
